@@ -1,7 +1,12 @@
 function minDate(dates) {
   //write you code here
-	let copy = [...dates];
-	return copy.reduce((min, current) => (current < min ? current : min));
+	let index = 0;
+	for(let i = 1; i < dates.length; i++){
+		if(new Date(dates[i]) < new Date(dates[index])){
+			index = i;
+		}
+	}
+	return dates[index];
 }
 
 // Do not change the code
